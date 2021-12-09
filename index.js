@@ -66,9 +66,9 @@ app.listen(port, function(err) {
 
 
 app.delete('/chatlogs/users/:id', function(req, res) {
-    const found = users.some(user => msg_.id === parseInt(req.params.id));
+    const found = users.some(user => user.msg_.id === parseInt(req.params.id));
     if(found) {
-        res.json(users.filter(user =>  msg.id === parseInt(req.params.id)));
+        res.json(users.filter(user =>  user.msg.id === parseInt(req.params.id)));
     } else {
         return res.json({
             message: "Please put valid msg id"
